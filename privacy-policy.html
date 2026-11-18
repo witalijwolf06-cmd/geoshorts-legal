@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · GeoShorts Publishing</title>
+<meta name="description" content="How GeoShorts Publishing handles data from TikTok.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="index.html" aria-label="GeoShorts Publishing home">Geo<span>Shorts</span></a>
+  <nav aria-label="Main"><a href="index.html">About this app</a><a href="privacy-policy.html" aria-current="page">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a></nav>
+</header>
+<main id="main">
+
+<h1>Privacy Policy</h1>
+<p class="small">Last updated 2026-11-18</p>
+<h2>1. Who is responsible</h2>
+<p>Witalij Wolf<br>74177 Bad Friedrichshall<br>E-mail: geoshorts2@gmail.com</p>
+<h2>2. What GeoShorts Publishing is</h2>
+<p>GeoShorts Publishing is a private command-line tool that the owner of the GeoShorts channel runs on the owner's own Windows computer. It has no server, no website login and no user accounts for other people. The only TikTok account it is used with is the owner's own GeoShorts account.</p>
+<h2>3. Data received from TikTok</h2>
+<p>When the owner signs in through TikTok Login Kit, the tool asks only for <code>user.info.basic</code> and <code>user.info.profile</code>. With them it reads <code>open_id</code>, <code>username</code>, <code>display_name</code> of the signed-in account. It uses these only to check that the signed-in account is the expected GeoShorts account and to link that account to the GeoShorts channel in the tool's own settings.</p>
+<p>The tool does not request or read videos, comments, direct messages, followers, contacts, location, device data or statistics, and it uploads or posts nothing.</p>
+<h2>4. Where the data is stored</h2>
+<ul>
+  <li>The refresh token, the app's client key and secret, the account's open ID and username, the granted permissions and two dates are stored in the Windows Credential Manager of the owner's computer.</li>
+  <li>The short-lived access token is kept only in memory while a command runs and is never written to a file.</li>
+  <li>The channel settings file of the tool contains the account's username and open ID.</li>
+  <li>Tokens and secrets are never written to log files or to version control.</li>
+</ul>
+<h2>5. Sharing</h2>
+<p>The data is not sold, shared or transferred to anyone. It leaves the owner's computer only in requests to TikTok's own API. GeoShorts Publishing uses no analytics, no advertising and no tracking.</p>
+<h2>6. How long it is kept, and how to remove it</h2>
+<p>The stored sign-in stays until the owner signs out with the tool (which deletes it from the Credential Manager) or until TikTok's refresh token expires (180 days without use). Access can also be withdrawn at any time in the TikTok app under Settings, Security, Manage app permissions.</p>
+<h2>7. Legal basis and your rights</h2>
+<p>The only person whose data is processed is the owner, who signs in personally. Where the EU General Data Protection Regulation applies, you have the right to access, rectification, erasure, restriction, data portability and objection, and the right to lodge a complaint with a supervisory authority (the data protection supervisory authority of the federal state of Baden-Württemberg, Germany). Contact: geoshorts2@gmail.com.</p>
+<h2>8. This website</h2>
+<p>This website is hosted on GitHub Pages (GitHub, Inc.). GitHub may log the IP address of visitors for security purposes; this website itself sets no cookies and runs no scripts. See the provider's privacy statement: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a>. The website uses no cookies, no analytics and no scripts.</p>
+<h2>9. Changes</h2>
+<p>If GeoShorts Publishing ever uses more TikTok data or permissions (for example to upload videos the owner has approved to the owner's own account), this policy will be updated before that use begins.</p>
+</main>
+<footer class="foot">
+  <p>GeoShorts Publishing · Last updated 2026-11-18</p>
+  <p><a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-of-service.html">Terms of Service</a></p>
+</footer>
+</body>
+</html>
