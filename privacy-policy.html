@@ -34,7 +34,12 @@
 <h2>5. Sharing</h2>
 <p>The data is not sold, shared or transferred to anyone. It leaves the owner's computer only in requests to TikTok's own API. GeoShorts Publishing uses no analytics, no advertising and no tracking.</p>
 <h2>6. How long it is kept, and how to remove it</h2>
-<p>The stored sign-in stays until the owner signs out with the tool (which deletes it from the Credential Manager) or until TikTok's refresh token expires (180 days without use). Access can also be withdrawn at any time in the TikTok app under Settings, Security, Manage app permissions.</p>
+<ul>
+  <li>The stored sign-in described in section 4 is kept until the owner removes it. It is not deleted automatically.</li>
+  <li>Signing out with the tool deletes the stored sign-in from the Windows Credential Manager. This does not withdraw the app's access on TikTok; that is done in the TikTok app under Settings, Security, Manage app permissions.</li>
+  <li>The refresh token stops working when its validity period set by TikTok ends, or earlier if access is withdrawn on TikTok. When the account was connected on 18 November 2026, TikTok reported a validity of 365 days; each use renews it. An expired token remains stored, but can no longer be used, until the owner signs out.</li>
+  <li>The username and open ID are also written to the tool's channel settings file. That file is kept in the tool's local version history and in backup copies on the owner's computer. No function of the tool removes them: they stay until the owner deletes them by hand. Deleting them from the settings file does not remove them from the version history or from earlier backup copies, which are kept without a fixed deletion date.</li>
+</ul>
 <h2>7. Legal basis and your rights</h2>
 <p>The only person whose data is processed is the owner, who signs in personally. Where the EU General Data Protection Regulation applies, you have the right to access, rectification, erasure, restriction, data portability and objection, and the right to lodge a complaint with a supervisory authority (the data protection supervisory authority of the federal state of Baden-Württemberg, Germany). Contact: geoshorts2@gmail.com.</p>
 <h2>8. This website</h2>
