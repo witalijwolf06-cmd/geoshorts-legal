@@ -23,29 +23,34 @@
 <p>GeoShorts Publishing is a private command-line tool that the owner of the GeoShorts channel runs on the owner's own Windows computer. It has no server, no website login and no user accounts for other people. The only TikTok account it is used with is the owner's own GeoShorts account.</p>
 <h2>3. Data received from TikTok</h2>
 <p>When the owner signs in through TikTok Login Kit, the tool asks only for <code>user.info.basic</code> and <code>user.info.profile</code>. With them it reads <code>open_id</code>, <code>username</code>, <code>display_name</code> of the signed-in account. It uses these only to check that the signed-in account is the expected GeoShorts account and to link that account to the GeoShorts channel in the tool's own settings.</p>
-<p>The tool does not request or read videos, comments, direct messages, followers, contacts, location, device data or statistics, and it uploads or posts nothing.</p>
+<p>For uploads the owner signs in a second, separate time and additionally grants <code>video.upload</code>. With it the tool sends a video file the owner has approved for TikTok to TikTok as a draft in the owner's own inbox. No caption, title or other text is sent; the owner adds them and publishes the post personally in the TikTok app. The tool does not have the permission to post directly (<code>video.publish</code>).</p>
+<p>Apart from the processing status of its own uploads, the tool does not request or read videos, comments, direct messages, followers, contacts, location, device data or statistics.</p>
 <h2>4. Where the data is stored</h2>
 <ul>
   <li>The refresh token, the app's client key and secret, the account's open ID and username, the granted permissions and two dates are stored in the Windows Credential Manager of the owner's computer.</li>
   <li>The short-lived access token is kept only in memory while a command runs and is never written to a file.</li>
   <li>The channel settings file of the tool contains the account's username and open ID.</li>
+  <li>The separate upload sign-in is stored in the same way, as its own entry.</li>
+  <li>During an upload, TikTok's publish ID and the temporary upload address are stored in the Windows Credential Manager, so an interrupted upload can be completed instead of sent twice. They are removed once TikTok has received all bytes of the video. If the upload fails or its outcome is unclear, they stay stored until a later check confirms the upload (then they are removed) or the owner deletes them.</li>
+  <li>The tool's publication log on the owner's computer records each upload with its date, the episode, its state, the checksums of the approved files, TikTok's publish ID and status, and any error message.</li>
   <li>Tokens and secrets are never written to log files or to version control.</li>
 </ul>
 <h2>5. Sharing</h2>
-<p>The data is not sold, shared or transferred to anyone. It leaves the owner's computer only in requests to TikTok's own API. GeoShorts Publishing uses no analytics, no advertising and no tracking.</p>
+<p>The data is not sold, shared or transferred to anyone. It leaves the owner's computer only in requests to TikTok's own API, including the approved video files sent as drafts. GeoShorts Publishing uses no analytics, no advertising and no tracking.</p>
 <h2>6. How long it is kept, and how to remove it</h2>
 <ul>
   <li>The stored sign-in described in section 4 is kept until the owner removes it. It is not deleted automatically.</li>
   <li>Signing out with the tool deletes the stored sign-in from the Windows Credential Manager. This does not withdraw the app's access on TikTok; that is done in the TikTok app under Settings, Security, Manage app permissions.</li>
   <li>The refresh token stops working when its validity period set by TikTok ends, or earlier if access is withdrawn on TikTok. When the account was connected on 18 November 2026, TikTok reported a validity of 365 days; each use renews it. An expired token remains stored, but can no longer be used, until the owner signs out.</li>
   <li>The username and open ID are also written to the tool's channel settings file. That file is kept in the tool's local version history and in backup copies on the owner's computer. No function of the tool removes them: they stay until the owner deletes them by hand. Deleting them from the settings file does not remove them from the version history or from earlier backup copies, which are kept without a fixed deletion date.</li>
+  <li>The publication log is kept without a fixed deletion date, as the record of what was sent to TikTok. Drafts in the TikTok inbox and posts are managed and deleted in the TikTok app.</li>
 </ul>
 <h2>7. Legal basis and your rights</h2>
 <p>The only person whose data is processed is the owner, who signs in personally. Where the EU General Data Protection Regulation applies, you have the right to access, rectification, erasure, restriction, data portability and objection, and the right to lodge a complaint with a supervisory authority (the data protection supervisory authority of the federal state of Baden-Württemberg, Germany). Contact: geoshorts2@gmail.com.</p>
 <h2>8. This website</h2>
 <p>This website is hosted on GitHub Pages (GitHub, Inc.). GitHub may log the IP address of visitors for security purposes; this website itself sets no cookies and runs no scripts. See the provider's privacy statement: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a>. The website uses no cookies, no analytics and no scripts.</p>
 <h2>9. Changes</h2>
-<p>If GeoShorts Publishing ever uses more TikTok data or permissions (for example to upload videos the owner has approved to the owner's own account), this policy will be updated before that use begins.</p>
+<p>If GeoShorts Publishing ever uses more TikTok data or permissions (for example to post directly), this policy will be updated before that use begins.</p>
 </main>
 <footer class="foot">
   <p>GeoShorts Publishing · Last updated 2026-11-18</p>
